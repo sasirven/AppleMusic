@@ -1,4 +1,4 @@
-﻿namespace AppleMusic;
+﻿namespace AppleMusic.Views.Pages;
 
 public partial class MainPage : ContentPage
 {

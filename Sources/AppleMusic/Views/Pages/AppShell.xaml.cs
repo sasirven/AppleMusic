@@ -1,4 +1,4 @@
-﻿namespace AppleMusic;
+﻿namespace AppleMusic.Views.CustomViews;
 
 public partial class AppShell : Shell
 {
