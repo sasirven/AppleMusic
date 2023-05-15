@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AppleMusic.Views.CustomViews.ImageTitleView">
+    <ContentView.Resources>
+        <Style x:Key="Artist" BasedOn="{StaticResource DefaultLabel}" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimary}, Dark={StaticResource DarkPrimary}}"></Setter>
+        </Style>
+    </ContentView.Resources>
+    
+    <VerticalStackLayout VerticalOptions="Center">
+        <Frame CornerRadius="20" Padding="0" Margin="80,20">
+            <Image Source="speak_no_evil.png" Aspect="AspectFill">
+            </Image>
+            <Frame.Shadow>
+                <Shadow Brush="White" Offset="10,10" Radius="60" Opacity="1"/>
+            </Frame.Shadow>
+        </Frame>
+        <Label Text="Speak No Evil (Rudy Van Gelder Edition)" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Label Text="Wayne Shorter" FontSize="Title" HorizontalTextAlignment="Center" Style="{StaticResource Artist}"/>
+        <Label  Text="Jazz · 1966  Lossless" FontSize="Body" HorizontalTextAlignment="Center" TextColor="Gray"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Lecture" Margin="20"/>
+            <Button Grid.Column="1" Text="Aléatoire" Margin="20"/>
+        </Grid>
+    </VerticalStackLayout>
+    
+</ContentView>

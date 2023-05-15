@@ -40,6 +40,7 @@
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<MauiImage Update="Resources\Images\speak_no_evil.jpg" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -58,6 +59,12 @@
 	  <MauiXaml Update="Views\Pages\MainPage.xaml">
 	    <SubType>Designer</SubType>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\DetailPage.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CustomViews\ImageTitleView.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\AppShell.xaml">
 	    <SubType>Designer</SubType>
 	  </MauiXaml>
@@ -66,6 +73,14 @@
 	<ItemGroup>
 	  <Compile Update="Pages\MainPage.xaml.cs">
 	    <DependentUpon>MainPage.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Pages\DetailPage.xaml.cs">
+	    <DependentUpon>DetailPage.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Views\CustomViews\ImageTitleView.xaml.cs">
+	    <DependentUpon>ImageTitleView.xaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
 	  <Compile Update="Views\Pages\AppShell.xaml.cs">

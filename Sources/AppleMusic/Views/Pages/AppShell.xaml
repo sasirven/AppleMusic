@@ -7,6 +7,6 @@
     FlyoutBehavior="Disabled">
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:DetailPage}"
         Route="DetailPage" />
 </Shell>
