@@ -40,7 +40,7 @@
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-		<MauiImage Update="Resources\Images\speak_no_evil.jpg" />
+		<MauiImage Update="Resources\Images\apple_lossless.svg" BaseSize="32,32" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -87,5 +87,9 @@
 	    <DependentUpon>AppShell.xaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Model\Model.csproj" />
 	</ItemGroup>
 </Project>
