@@ -4,21 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AppleMusic.Views.Pages"
-    xmlns:tools="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     FlyoutBehavior="Disabled">
     <Shell.Behaviors>
-        <tools:StatusBarBehavior StatusBarColor="{StaticResource DarkPrimary}"/>
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black} }"/>
     </Shell.Behaviors>
     <TabBar>
         <ShellContent
-            Title="Home"
+            Title="Écouter"
             ContentTemplate="{DataTemplate local:DetailPage}"
-            Icon="dotnet_bot.png"
+            Icon="listen_icon"
             Route="DetailPage" /> 
         <ShellContent
-            Title="Home"
+            Title="Explorer"
             ContentTemplate="{DataTemplate local:DetailPage}"
-            Icon="{OnPlatform 'appicon.png', Android='appicon.png'}"
+            Icon="explore_icon"
+            Route="DetailPage" /> 
+        <ShellContent
+            Title="Radio"
+            ContentTemplate="{DataTemplate local:DetailPage}"
+            Icon="radio_icon"
+            Route="DetailPage" /> 
+        <ShellContent
+            Title="Bibliothèque"
+            ContentTemplate="{DataTemplate local:DetailPage}"
+            Icon="library_icon"
+            Route="DetailPage" /> 
+        <ShellContent
+            Title="Recherche"
+            ContentTemplate="{DataTemplate local:DetailPage}"
+            Icon="search_icon"
             Route="DetailPage" /> 
     </TabBar>
 </Shell>
