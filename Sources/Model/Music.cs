@@ -7,7 +7,7 @@ public class Music
         get => _number;
         private init
         {
-            if (_number < 1) throw new ArgumentOutOfRangeException(nameof(value), "Number must be greater than 0.");
+            if (value < 1) throw new ArgumentOutOfRangeException(nameof(value), "Number must be greater than 0.");
             _number = value;
         }
     }
@@ -24,9 +24,12 @@ public class Music
     }
     private readonly string _name = string.Empty;
     
-    public Music(uint number, string name)
+    public bool IsStarred { get; set; }
+    
+    public Music(uint number, string name, bool isStarred)
     {
         Number = number;
         Name = name;
+        IsStarred = isStarred;
     }
 }

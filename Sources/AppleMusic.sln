@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppleMusic", "AppleMusic\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{469FA667-A99C-4A19-B647-FD4DE50ADE5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stub", "Stub\Stub.csproj", "{C486427C-3B9C-4A2F-AAF7-E8D30A48876A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubLib", "StubLib\StubLib.csproj", "{C486427C-3B9C-4A2F-AAF7-E8D30A48876A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

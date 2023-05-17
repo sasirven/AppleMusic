@@ -59,17 +59,7 @@ public class Album
     }
     private readonly DateTime _releaseDate = DateTime.MinValue;
     
-    public string RecordLabel
-    {
-        get => _recordLabel;
-        private init
-        {
-            if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException(nameof(value), "RecordLabel must not be null or whitespace.");
-            _recordLabel = value;
-        }
-    }
-    private readonly string _recordLabel = string.Empty;
-    
+    public string RecordLabel { get; private init; }
     public string Lossless
     {
         get => _lossless;
@@ -88,7 +78,7 @@ public class Album
         get => _duration;
         private init
         {
-            if (_duration < 1) throw new ArgumentOutOfRangeException(nameof(value), "Duration must be greater than 0.");
+            if (value < 1) throw new ArgumentOutOfRangeException(nameof(value), "Duration must be greater than 0.");
             _duration = value;
         }
     }
