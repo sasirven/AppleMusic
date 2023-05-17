@@ -12,12 +12,12 @@
     <Color x:Key="LightTertiary">#F7F7F7</Color>
     <Color x:Key="LightTextVariant">#808080</Color>
     <Color x:Key="DarkPrimary">#E6434F</Color>
-    <Color x:Key="DarkSecondary">#1C1C1E</Color>
+    <Color x:Key="DarkSecondary">#373739</Color>
     <Color x:Key="DarkSecondaryVariant">#7F7F7F</Color>
-    <Color x:Key="DarkTertiary">#131313</Color>
+    <Color x:Key="DarkTertiary">#262627</Color>
     <Color x:Key="DarkTextVariant">#A09C9A</Color>
     
-    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
+<SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
     <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
     <SolidColorBrush x:Key="LightPrimaryBrush" Color="{StaticResource LightPrimary}"/>
     <SolidColorBrush x:Key="LightSecondaryBrush" Color="{StaticResource LightSecondary}"/>
