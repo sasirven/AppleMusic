@@ -2,11 +2,15 @@
 
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:model="clr-namespace:Model;assembly=Model"
+             x:DataType="model:Album"
              x:Class="AppleMusic.Views.CustomViews.ImageTitleView">
     <ContentView.Resources>
         <Style x:Key="Artist" BasedOn="{StaticResource DefaultLabel}" TargetType="Label">
-            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimary}, Dark={StaticResource DarkPrimary}}"></Setter>
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimary}, Dark={StaticResource DarkPrimary}}"/>
         </Style>
+       
     </ContentView.Resources>
     
     <VerticalStackLayout VerticalOptions="Center">
@@ -14,24 +18,23 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10"/>
             </Border.StrokeShape>
-            <Image Source="speak_no_evil.png" Aspect="AspectFill"/>
+            <Image Source="{Binding Image, FallbackValue=null}" Aspect="AspectFill"/>
             <Border.Shadow>
                 <Shadow Brush="White" Offset="0,20" Radius="24" Opacity="0.4"/>
             </Border.Shadow>
         </Border>
-        <Label Text="Speak No Evil (Rudy Van Gelder Edition)" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-        <Label Text="Wayne Shorter" FontSize="Title" HorizontalTextAlignment="Center" Style="{StaticResource Artist}"/>
-        <Label  Text="Jazz · 1966  Lossless" FontSize="Body" HorizontalTextAlignment="Center" TextColor="Gray"/>
-
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Button Text="Lecture" Margin="20"/>
-            <Button Grid.Column="1" Text="Aléatoire" Margin="20"/>
-        </Grid>
+        <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Label Style="{StaticResource Artist}" Text="{Binding Artist}" FontSize="Title" HorizontalTextAlignment="Center"/>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Style="{StaticResource Subtitle}" Text="{Binding Genre}"/>
+            <Label Style="{StaticResource Subtitle}" Text="{Binding ReleaseDate, StringFormat=' · {0:yyyy} · '}"/>
+            <Image Source="apple_lossless_icon">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource LightTextVariant}, Dark={StaticResource DarkTextVariant}}"/>
+                </Image.Behaviors>
+            </Image>
+            <Label Style="{StaticResource Subtitle}" Text="{Binding Lossless}"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
     
 </ContentView>
