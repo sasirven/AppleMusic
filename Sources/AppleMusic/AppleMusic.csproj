@@ -16,7 +16,7 @@
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.applemusic</ApplicationId>
-		<ApplicationIdGuid>7e52d6d1-1393-47a3-8a24-00e3c7e92d1f</ApplicationIdGuid>
+		<ApplicationIdGuid>7e52d6d1-1393-47a3-8a32-00e3c7e92d1f</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -28,6 +28,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -39,8 +40,19 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-		<MauiImage Update="Resources\Images\apple_lossless.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\apple_lossless_icon.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\explore_icon.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\library_icon.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\mastered_for_apple_icon.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\play_icon_light.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\play_icon_dark.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\listen_icon.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\radio_icon.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\search_icon.svg" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\shuffle_icon_light.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\shuffle_icon_dark.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\star_icon.svg" BaseSize="10,10" />
+		<MauiImage Update="Resources\Images\download_icon.svg" BaseSize="10,10" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -91,5 +103,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Model\Model.csproj" />
+	  <ProjectReference Include="..\StubLib\StubLib.csproj" />
 	</ItemGroup>
 </Project>
