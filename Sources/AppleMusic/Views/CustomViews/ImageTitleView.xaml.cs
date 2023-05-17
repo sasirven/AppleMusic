@@ -18,6 +18,5 @@ public partial class ImageTitleView : ContentView
     public ImageTitleView()
     {
         InitializeComponent();
-        BindingContext = Album;
     }
 }

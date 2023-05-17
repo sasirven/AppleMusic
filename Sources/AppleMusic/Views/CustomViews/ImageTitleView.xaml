@@ -3,12 +3,13 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:model="clr-namespace:Model;assembly=Model"
-             x:DataType="model:Album"
-             x:Class="AppleMusic.Views.CustomViews.ImageTitleView">
+             x:Class="AppleMusic.Views.CustomViews.ImageTitleView"
+             x:Name="View">
     <ContentView.Resources>
         <Style x:Key="Artist" BasedOn="{StaticResource DefaultLabel}" TargetType="Label">
-            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimary}, Dark={StaticResource DarkPrimary}}"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding
+                                                 Light={StaticResource LightPrimary}, 
+                                                 Dark={StaticResource DarkPrimary}}"/>
         </Style>
        
     </ContentView.Resources>
@@ -18,22 +19,31 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10"/>
             </Border.StrokeShape>
-            <Image Source="{Binding Image, FallbackValue=null}" Aspect="AspectFill"/>
+            <Image Source="{Binding Album.Image,Source={x:Reference View}}" Aspect="AspectFill"/>
             <Border.Shadow>
                 <Shadow Brush="White" Offset="0,20" Radius="24" Opacity="0.4"/>
             </Border.Shadow>
         </Border>
-        <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-        <Label Style="{StaticResource Artist}" Text="{Binding Artist}" FontSize="Title" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding Album.Name, Source={x:Reference View}}" 
+               FontAttributes="Bold" 
+               HorizontalTextAlignment="Center"/>
+        <Label Style="{StaticResource Artist}" 
+               Text="{Binding Album.Artist, Source={x:Reference View}}" 
+               FontSize="Title" 
+               HorizontalTextAlignment="Center"/>
         <HorizontalStackLayout HorizontalOptions="Center">
-            <Label Style="{StaticResource Subtitle}" Text="{Binding Genre}"/>
-            <Label Style="{StaticResource Subtitle}" Text="{Binding ReleaseDate, StringFormat=' · {0:yyyy} · '}"/>
-            <Image Source="apple_lossless_icon">
+            <Label Style="{StaticResource Subtitle}" 
+                   Text="{Binding Album.Genre, Source={x:Reference View}}"/>
+            <Label Style="{StaticResource Subtitle}" 
+                   Text="{Binding Album.ReleaseDate, Source={x:Reference View}, StringFormat=' · {0:yyyy} ·'}"/>
+            <Image Source="apple_lossless_icon" Margin="5,0">
                 <Image.Behaviors>
-                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource LightTextVariant}, Dark={StaticResource DarkTextVariant}}"/>
+                    <toolkit:IconTintColorBehavior 
+                        TintColor="{AppThemeBinding Light={StaticResource LightTextVariant}, 
+                                                                  Dark={StaticResource DarkTextVariant}}"/>
                 </Image.Behaviors>
             </Image>
-            <Label Style="{StaticResource Subtitle}" Text="{Binding Lossless}"/>
+            <Label Style="{StaticResource Subtitle}" Text="{Binding Album.Lossless, Source={x:Reference View}}"/>
         </HorizontalStackLayout>
     </VerticalStackLayout>
     

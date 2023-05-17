@@ -34,25 +34,59 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiImage Include="Resources\Images\Icons\apple_lossless_icon.svg">
+		  <BaseSize>20,20</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\download_icon.svg">
+		  <BaseSize>10,10</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\explore_icon.svg">
+		  <BaseSize>32,32</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\library_icon.svg">
+		  <BaseSize>32,32</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\listen_icon.svg">
+		  <BaseSize>32,32</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\mastered_for_apple_icon.svg">
+		  <BaseSize>32,32</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\play_icon_dark.svg">
+		  <BaseSize>20,20</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\play_icon_light.svg">
+		  <BaseSize>20,20</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\radio_icon.svg">
+		  <BaseSize>32,32</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\search_icon.svg">
+		  <BaseSize>32,32</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\shuffle_icon_dark.svg">
+		  <BaseSize>20,20</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\shuffle_icon_light.svg">
+		  <BaseSize>20,20</BaseSize>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\Icons\star_icon.svg">
+		  <BaseSize>10,10</BaseSize>
+		</MauiImage>
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\apple_lossless_icon.svg" BaseSize="20,20" />
-		<MauiImage Update="Resources\Images\explore_icon.svg" BaseSize="32,32" />
-		<MauiImage Update="Resources\Images\library_icon.svg" BaseSize="32,32" />
-		<MauiImage Update="Resources\Images\mastered_for_apple_icon.svg" BaseSize="32,32" />
-		<MauiImage Update="Resources\Images\play_icon_light.svg" BaseSize="20,20" />
-		<MauiImage Update="Resources\Images\play_icon_dark.svg" BaseSize="20,20" />
-		<MauiImage Update="Resources\Images\listen_icon.svg" BaseSize="32,32" />
-		<MauiImage Update="Resources\Images\radio_icon.svg" BaseSize="32,32" />
-		<MauiImage Update="Resources\Images\search_icon.svg" BaseSize="32,32" />
-		<MauiImage Update="Resources\Images\shuffle_icon_light.svg" BaseSize="20,20" />
-		<MauiImage Update="Resources\Images\shuffle_icon_dark.svg" BaseSize="20,20" />
-		<MauiImage Update="Resources\Images\star_icon.svg" BaseSize="10,10" />
-		<MauiImage Update="Resources\Images\download_icon.svg" BaseSize="10,10" />
+        <MauiImage Update="Resources\Images\Icons\*" BaseSize="32,32" />
+		<MauiImage Update="Resources\Images\Icons\apple_lossless_icon.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\Icons\play_icon_light.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\Icons\play_icon_dark.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\Icons\shuffle_icon_light.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\Icons\shuffle_icon_dark.svg" BaseSize="20,20" />
+		<MauiImage Update="Resources\Images\Icons\star_icon.svg" BaseSize="10,10" />
+		<MauiImage Update="Resources\Images\Icons\download_icon.svg" BaseSize="15,15" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />

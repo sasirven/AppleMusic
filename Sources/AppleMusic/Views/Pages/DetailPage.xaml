@@ -13,6 +13,9 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Resources>
         <converters:BoolToOpacityConverter x:Key="BoolToOpacityConverter"/>
+        <Style x:Key="BottomSubtitle" BasedOn="{StaticResource Subtitle}" TargetType="Label">
+            <Setter Property="Margin" Value="30,0"/>
+        </Style>
     </ContentPage.Resources>
     
     <ScrollView>
@@ -34,8 +37,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Music">
                     <ViewCell>
-                        <VerticalStackLayout>
-                            <Grid Margin="20, 0">
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Grid Margin="10, 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
@@ -43,25 +46,38 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="AUto"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Source="star_icon" Opacity="{Binding IsStarred, Converter={StaticResource BoolToOpacityConverter}}"/>
-                                <Label Grid.Column="1" Text="{Binding Number}" Margin="10, 0"/>
-                                <Label Grid.Column="2" Text="{Binding Name }"/>
-                                <Image Grid.Column="3" Source="download_icon">
+                                <Image Source="star_icon" 
+                                       Opacity="{Binding IsStarred, Converter={StaticResource BoolToOpacityConverter}}"
+                                       VerticalOptions="Center">
                                     <Image.Behaviors>
-                                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource LightTextVariant}, Dark={StaticResource DarkTextVariant}}"/>
+                                        <toolkit:IconTintColorBehavior 
+                                            TintColor="{AppThemeBinding 
+                                                Light={StaticResource LightSecondaryVariant}, 
+                                                Dark={StaticResource DarkSecondaryVariant}}"/>
                                     </Image.Behaviors>
                                 </Image>
-                                <Button Grid.Column="4" Background="transparent" Text="..."/>
+                                <Label Grid.Column="1" Text="{Binding Number}" Margin="10, 0" VerticalOptions="Center"/>
+                                <Label Grid.Column="2" Text="{Binding Name }" VerticalOptions="Center"/>
+                                <Image Grid.Column="3" Source="download_icon" VerticalOptions="Center">
+                                    <Image.Behaviors>
+                                        <toolkit:IconTintColorBehavior 
+                                            TintColor="{AppThemeBinding 
+                                                Light={StaticResource LightSecondary}, 
+                                                Dark={StaticResource DarkSecondary}}"/>
+                                    </Image.Behaviors>
+                                </Image>
+                                <Button Grid.Column="4" Background="transparent" Text="..." VerticalOptions="Center"/>
                             </Grid>
-                            <BoxView HeightRequest="1" Margin="20,0,0,5"
+                            <Label Text="COucou"></Label>
+                            <BoxView HeightRequest="10" WidthRequest="100" Margin="20,0,0,5"
                                      BackgroundColor="{AppThemeBinding Light={StaticResource LightSecondary}, Dark={StaticResource DarkSecondary}}"/>
                         </VerticalStackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Label Style="{StaticResource Subtitle}" Text="{Binding CurrentAlbum.ReleaseDate, StringFormat='{0:dd MMMM yyyy}'}"/>
-        <Label Style="{StaticResource Subtitle}">
+        <Label Style="{StaticResource BottomSubtitle}" Text="{Binding CurrentAlbum.ReleaseDate, StringFormat='{0:dd MMMM yyyy}'}"/>
+        <Label Style="{StaticResource BottomSubtitle}">
             <Label.Text>
                 <MultiBinding StringFormat="{}{0} morceaux, {1} minutes">
                     <Binding Path="CurrentAlbum.NumberOfTracks"/>
@@ -69,7 +85,7 @@
                 </MultiBinding>
             </Label.Text>
         </Label>
-        <Label Style="{StaticResource Subtitle}" Text="{Binding CurrentAlbum.RecordLabel}"/>
+        <Label Style="{StaticResource BottomSubtitle}" Text="{Binding CurrentAlbum.RecordLabel}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
