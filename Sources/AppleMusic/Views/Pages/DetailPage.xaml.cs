@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Model;
+
 
 namespace AppleMusic.Views.Pages;
 
 public partial class DetailPage : ContentPage
 {
+    public static Manager Manager => ((App)Application.Current!).MyManager;
+    public static Album CurrentAlbum => Manager.Albums.First();
+    
     public DetailPage()
     {
         InitializeComponent();
-        List.ItemsSource = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+        BindingContext = this;
     }
 }
