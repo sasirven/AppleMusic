@@ -16,6 +16,8 @@
     <Color x:Key="DarkSecondaryVariant">#7F7F7F</Color>
     <Color x:Key="DarkTertiary">#201e1e</Color>
     <Color x:Key="DarkTextVariant">#A09C9A</Color>
+    <Color x:Key="LightDivider">#EEEEEE</Color>
+    <Color x:Key="DarkDivider">#323233</Color>
     
 <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
     <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
