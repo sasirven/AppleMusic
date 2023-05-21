@@ -14,7 +14,7 @@
     <Color x:Key="DarkPrimary">#E6434F</Color>
     <Color x:Key="DarkSecondary">#373739</Color>
     <Color x:Key="DarkSecondaryVariant">#7F7F7F</Color>
-    <Color x:Key="DarkTertiary">#262627</Color>
+    <Color x:Key="DarkTertiary">#201e1e</Color>
     <Color x:Key="DarkTextVariant">#A09C9A</Color>
     
 <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
