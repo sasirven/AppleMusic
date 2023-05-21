@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AppleMusic.Views.CustomViews.AlbumDetail.AlbumNavBarView"
+             
+             x:Name="View">
+    <ContentView.Resources>
+        <Style BasedOn="{StaticResource DefaultFrame}" TargetType="Frame">
+            <Setter Property="BackgroundColor" 
+                    Value="{AppThemeBinding 
+                                Light={StaticResource LightTertiary}, 
+                                Dark={StaticResource DarkTertiary}}"/>
+            <Setter Property="BorderColor" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="100"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+        </Style>
+    </ContentView.Resources>
+    
+    <VerticalStackLayout>
+        <Grid Padding="20"
+             >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Source="chevron_left_icon.jpg"
+                         HeightRequest="32"
+                         Clicked="ImageButton_Clicked">
+                <ImageButton.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding
+                                Light={StaticResource LightPrimary}, 
+                                Dark={StaticResource DarkPrimary}}"/>
+                </ImageButton.Behaviors>
+            </ImageButton>
+
+            <Label Grid.Column="1"
+                   IsVisible="True"
+                   Text="{Binding AlbumName, Source={x:Reference View}}"
+                   FontSize="20"
+                   LineBreakMode="TailTruncation"
+                   VerticalTextAlignment="Center"/>
+
+            <Frame Grid.Column="2">
+                <ImageButton
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    Source="checkmark_icon.jpg">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding
+                                Light={StaticResource LightPrimary}, 
+                                Dark={StaticResource DarkPrimary}}"/>
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </Frame>
+            <Frame Grid.Column="3">
+                <ImageButton
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    Source="ellipsis_icon.jpg">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding
+                                Light={StaticResource LightPrimary}, 
+                                Dark={StaticResource DarkPrimary}}"/>
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </Frame>
+        </Grid>
+        <BoxView HeightRequest="2" 
+                 IsVisible="false"/>
+    </VerticalStackLayout>
+</ContentView>
