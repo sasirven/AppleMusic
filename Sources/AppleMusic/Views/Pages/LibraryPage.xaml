@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:AppleMusic.Views.CustomViews.AlbumLibrary"
+             xmlns:player="clr-namespace:AppleMusic.Views.CustomViews"
              xmlns:model="clr-namespace:Model;assembly=Model"
              x:DataType="model:Manager"
              x:Class="AppleMusic.Views.Pages.LibraryPage">
@@ -11,6 +12,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             
             <views:LibraryNavBarView/>
@@ -20,6 +22,7 @@
                     <views:LibraryListView Albums="{Binding Albums}"/>
                 </VerticalStackLayout>
             </ScrollView>
+            <player:PlayingMusicView Grid.Row="2"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -4,21 +4,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:Model;assembly=Model"
              xmlns:views="clr-namespace:AppleMusic.Views.CustomViews.AlbumDetail"
+             xmlns:players="clr-namespace:AppleMusic.Views.CustomViews"
              x:DataType="model:Album"
              x:Class="AppleMusic.Views.Pages.AlbumPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         <views:AlbumNavBarView AlbumName="{Binding Name }"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout>
                 <views:AlbumHeaderView Album="{Binding }"/>
-                <views:MusicListView Musics="{Binding Musics}"/>
+                <views:MusicListView Album="{Binding}"/>
                 <views:AlbumFooterView Album="{Binding }"/>
             </VerticalStackLayout>
         </ScrollView>
+        <players:PlayingMusicView Grid.Row="2"/>
     </Grid>
 </ContentPage>
