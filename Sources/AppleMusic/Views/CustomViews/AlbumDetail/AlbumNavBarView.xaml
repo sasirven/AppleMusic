@@ -14,15 +14,17 @@
                                 Dark={StaticResource DarkTertiary}}"/>
             <Setter Property="BorderColor" Value="Transparent"/>
             <Setter Property="CornerRadius" Value="100"/>
-            <Setter Property="HeightRequest" Value="50"/>
-            <Setter Property="WidthRequest" Value="50"/>
-            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="HeightRequest" Value="35"/>
+            <Setter Property="WidthRequest" Value="35"/>
         </Style>
     </ContentView.Resources>
     
     <VerticalStackLayout>
-        <Grid Padding="20"
-             >
+        <Grid Padding="15"
+              ColumnSpacing="10"
+             Background="{AppThemeBinding
+                                Light={StaticResource LightTertiary}, 
+                                Dark={StaticResource DarkTertiary}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
@@ -30,8 +32,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <ImageButton Source="chevron_left_icon.jpg"
-                         HeightRequest="32"
+            <ImageButton Source="chevron_left_icon.png"
+                         HeightRequest="20"
                          Clicked="ImageButton_Clicked">
                 <ImageButton.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding
@@ -49,9 +51,9 @@
 
             <Frame Grid.Column="2">
                 <ImageButton
-                    HeightRequest="32"
-                    WidthRequest="32"
-                    Source="checkmark_icon.jpg">
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Source="checkmark_icon.png">
                     <ImageButton.Behaviors>
                         <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding
                                 Light={StaticResource LightPrimary}, 
@@ -61,9 +63,9 @@
             </Frame>
             <Frame Grid.Column="3">
                 <ImageButton
-                    HeightRequest="32"
-                    WidthRequest="32"
-                    Source="ellipsis_icon.jpg">
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Source="ellipsis_icon.png">
                     <ImageButton.Behaviors>
                         <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding
                                 Light={StaticResource LightPrimary}, 
@@ -72,7 +74,6 @@
                 </ImageButton>
             </Frame>
         </Grid>
-        <BoxView HeightRequest="2" 
-                 IsVisible="false"/>
+        <BoxView HeightRequest="2" IsVisible="True"/>
     </VerticalStackLayout>
 </ContentView>

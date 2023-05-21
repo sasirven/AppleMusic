@@ -10,8 +10,9 @@
     
     <VerticalStackLayout>
         <BoxView HeightRequest="2" Margin="25,0,0,0"/>
-        <ListView ItemsSource="{Binding Musics, Source={x:Reference View}}" SeparatorVisibility="None"
+        <ListView ItemsSource="{Binding Album.Musics, Source={x:Reference View}}" SeparatorVisibility="None"
                   SelectionMode="None"
+                  ItemTapped="OnItemTapped"
                   HorizontalScrollBarVisibility="Never"
                   VerticalScrollBarVisibility="Never">
             <ListView.ItemTemplate>

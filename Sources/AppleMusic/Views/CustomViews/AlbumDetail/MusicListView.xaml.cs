@@ -4,16 +4,23 @@ namespace AppleMusic.Views.CustomViews.AlbumDetail;
 
 public partial class MusicListView : ContentView
 {
-    public IReadOnlyCollection<Music> Musics
+    private static Manager Manager => ((App)Application.Current!).MyManager;
+    public Album Album
     {
-        get => (IReadOnlyCollection<Music>)GetValue(MusicsProperty);
-        set => SetValue(MusicsProperty, value);
+        get => (Album)GetValue(AlbumProperty);
+        set => SetValue(AlbumProperty, value);
     }
-    public static readonly BindableProperty MusicsProperty =
-        BindableProperty.Create(nameof(Musics), typeof(IReadOnlyCollection<Music>), typeof(MusicListView), null, BindingMode.OneTime);
+    public static readonly BindableProperty AlbumProperty =
+        BindableProperty.Create(nameof(Album), typeof(Album), typeof(MusicListView), null, BindingMode.OneTime);
     
     public MusicListView()
     {
         InitializeComponent();
+    }
+
+    private void OnItemTapped(object? sender, ItemTappedEventArgs e)
+    {
+        Manager.CurrentAlbum = Album;
+        Manager.CurrentMusic = e.Item as Music;
     }
 }

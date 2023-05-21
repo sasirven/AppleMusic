@@ -6,6 +6,7 @@ namespace AppleMusic.Views.CustomViews.AlbumLibrary;
 
 public partial class LibraryAlbumCellView : ContentView
 {
+    private static Manager Manager => ((App)Application.Current!).MyManager;
     public LibraryAlbumCellView()
     {
         InitializeComponent();
