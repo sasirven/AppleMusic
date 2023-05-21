@@ -8,7 +8,7 @@ public class Stub: ILoader
     {
         new Album(
             "Speak No Evil(RUdy Van Gelder Edition)",
-            "Wayne Shorter", "speak_no_evil",
+            "Wayne Shorter", "speak_no_evil.jpg",
             "Jazz", new DateTime(1966, 1, 1),
             "℗ 1966 Blue Note Records",
             "Lossless",
@@ -25,7 +25,7 @@ public class Stub: ILoader
         new Album(
             "Highway to Hell",
             "AC/DC", 
-            "highway_to_hell",
+            "highway_to_hell.jpg",
             "Hard Rock",
             new DateTime(1979, 7, 27),
             "℗ 1979 Leidseplein Presse B.V. for U.S. and Australian Music Corporation Ltd. for the rest of the world",
@@ -46,7 +46,7 @@ public class Stub: ILoader
         new Album(
             "Nevermind",
             "Nirvana",
-            "nevermind",
+            "nevermind.jpg",
             "Alternavie",
             new DateTime(1991, 9, 24),
             "℗ 2011 Geffen Records",
@@ -70,7 +70,7 @@ public class Stub: ILoader
         new Album(
             "POST HUMAN: SURVIVAL HORROR",
             "Bring Me The Horizon",
-            "post_human_survival_horror",
+            "post_human_survival_horror.jpg",
             "Hard Rock",
             new DateTime(2020, 10, 30),
             "℗ 2020 Sony Music Entertainment UK Limited",
@@ -90,7 +90,7 @@ public class Stub: ILoader
         new Album(
             "Rammstein",
             "Rammstein",
-            "rammstein",
+            "rammstein.jpg",
             "Metal",
             new DateTime(2019, 5, 17),
             "A Vertigo/Capitol release; ℗ 2019 Rammstein GBR, under exclusive license to Universal Music GmbH",
@@ -112,7 +112,7 @@ public class Stub: ILoader
         new Album(
             "Machine Head (Remastered)",
             "Deep Purple",
-            "machine_head",
+            "machine_head.jpg",
             "Hard Rock",
             new DateTime(1972, 3, 25),
             "℗ 2015 Deep Purple (Overseas) Ltd. under exclusive license to Universal Music Group Ltd.",
@@ -130,7 +130,7 @@ public class Stub: ILoader
         new Album(
             "RUSH!",
             "Måneskin",
-            "rush",
+            "rush.jpg",
             "Rock",
             new DateTime(2023, 01, 20),
             "℗ An Epic release (P) 2021 Sony Music Entertainment Italy S.p.a.",
@@ -158,7 +158,7 @@ public class Stub: ILoader
         new Album(
             "Kaioty - EP",
             "Tip Stevens",
-            "kaioty",
+            "kaioty.jpg",
             "Rock",
             new DateTime(2022, 10, 24),
             "℗ 2022 Floral Records x Minuit 14",

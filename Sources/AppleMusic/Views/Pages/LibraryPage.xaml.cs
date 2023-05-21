@@ -1,16 +1,14 @@
 ﻿using Model;
 
-
 namespace AppleMusic.Views.Pages;
 
-public partial class DetailPage : ContentPage
+public partial class LibraryPage : ContentPage
 {
     public Manager Manager => ((App)Application.Current!).MyManager;
-    public Album CurrentAlbum => Manager.Albums.First();
-    
-    public DetailPage()
+
+    public LibraryPage()
     {
         InitializeComponent();
-        BindingContext = this;
+        BindingContext = Manager;
     }
 }

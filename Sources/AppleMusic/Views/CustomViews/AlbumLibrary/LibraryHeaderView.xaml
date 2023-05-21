@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:AppleMusic.Views.CustomViews.AlbumLibrary"
+             x:Class="AppleMusic.Views.CustomViews.AlbumLibrary.LibraryHeaderView">
+    <ContentView.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+    </ContentView.Resources>
+    
+    <VerticalStackLayout>
+        <Label Text="Bibliothèque"
+               FontSize="40"
+               Margin="10"/>
+
+        <views:LibrarySectionItemView ImageSource="music_note_list_icon" Text="Playlists" />
+        <views:LibrarySectionItemView ImageSource="micro_icon" Text="Artists" />
+        <views:LibrarySectionItemView ImageSource="albums_icon" Text="Albums" />
+        <views:LibrarySectionItemView ImageSource="compilations_icon" Text="Compilations" />
+
+        <Label Text="Ajouts récents"
+               FontSize="25"
+               Margin="10"/>
+    </VerticalStackLayout>
+</ContentView>
