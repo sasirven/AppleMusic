@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Model;assembly=Model"
+             xmlns:views="clr-namespace:AppleMusic.Views.CustomViews.AlbumDetail"
+             x:DataType="model:Album"
+             x:Class="AppleMusic.Views.Pages.AlbumPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <views:AlbumNavBarView AlbumName="{Binding Name }"/>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout>
+                <views:AlbumHeaderView Album="{Binding }"/>
+                <views:MusicListView Musics="{Binding Musics}"/>
+                <views:AlbumFooterView Album="{Binding }"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

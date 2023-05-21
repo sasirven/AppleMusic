@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:converters="clr-namespace:AppleMusic.Converters"
+             xmlns:model="clr-namespace:Model;assembly=Model" 
+             x:DataType="model:Music"
+             x:Class="AppleMusic.Views.CustomViews.AlbumDetail.MusicCellView">
+    
+    <ContentView.Resources>
+        <converters:BoolToOpacityConverter x:Key="BoolToOpacityConverter"/>
+    </ContentView.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10, 0" VerticalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="star_icon" 
+               Opacity="{Binding IsStarred, Converter={StaticResource BoolToOpacityConverter}}"
+               VerticalOptions="Center">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior 
+                    TintColor="{AppThemeBinding 
+                        Light={StaticResource LightSecondaryVariant}, 
+                        Dark={StaticResource DarkSecondaryVariant}}"/>
+                </Image.Behaviors>
+            </Image>
+            <Label Grid.Column="1" Text="{Binding Number}" Margin="10, 0" VerticalOptions="Center" Style="{StaticResource Subtitle}"/>
+            <Label Grid.Column="2" Text="{Binding Name}" VerticalOptions="Center" LineBreakMode="TailTruncation" Padding="0,0,40,0"/>
+            <Image Grid.Column="3" Source="download_icon" VerticalOptions="Center">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior 
+                    TintColor="{AppThemeBinding 
+                        Light={StaticResource LightSecondary}, 
+                        Dark={StaticResource DarkSecondary}}"/>
+                </Image.Behaviors>
+            </Image>
+            <Button Grid.Column="4" VerticalOptions="Center" Background="transparent" 
+                Text="···"  FontAttributes="Bold" FontSize="20"
+
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+
+        </Grid>
+        <BoxView Grid.Row="1" HeightRequest="2" Margin="55,0,0,0" />
+    </Grid>
+</ContentView>

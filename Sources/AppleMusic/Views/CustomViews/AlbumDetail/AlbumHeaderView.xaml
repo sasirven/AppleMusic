@@ -3,7 +3,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="AppleMusic.Views.CustomViews.ImageTitleView"
+             x:Class="AppleMusic.Views.CustomViews.AlbumDetail.AlbumHeaderView"
              x:Name="View">
     <ContentView.Resources>
         <Style x:Key="Artist" BasedOn="{StaticResource DefaultLabel}" TargetType="Label">
@@ -27,10 +27,12 @@
         <Label Text="{Binding Album.Name, Source={x:Reference View}}" 
                FontAttributes="Bold" 
                HorizontalTextAlignment="Center"/>
+        
         <Label Style="{StaticResource Artist}" 
                Text="{Binding Album.Artist, Source={x:Reference View}}" 
                FontSize="Title" 
                HorizontalTextAlignment="Center"/>
+        
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Style="{StaticResource Subtitle}" 
                    Text="{Binding Album.Genre, Source={x:Reference View}}"/>
@@ -45,6 +47,18 @@
             </Image>
             <Label Style="{StaticResource Subtitle}" Text="{Binding Album.Lossless, Source={x:Reference View}}"/>
         </HorizontalStackLayout>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Lecture" Margin="20" 
+                    ImageSource="{AppThemeBinding Light=play_icon_light, Dark=play_icon_dark}"/>
+            <Button Grid.Column="1" Text="Aléatoire" Margin="20"
+                    ImageSource="{AppThemeBinding Light=shuffle_icon_light, Dark=shuffle_icon_dark}"/>
+        </Grid>
     </VerticalStackLayout>
     
 </ContentView>

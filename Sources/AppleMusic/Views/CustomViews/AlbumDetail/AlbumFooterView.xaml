@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AppleMusic.Views.CustomViews.AlbumDetail.AlbumFooterView"
+             x:Name="View">
+    
+    
+    <VerticalStackLayout Margin="30,15">
+        <HorizontalStackLayout IsVisible="{Binding Album.IsMasteredForApple, 
+                Source={x:Reference View}}"
+                               Margin="0,0,0,10">
+            <Image Source="mastered_for_apple_icon" 
+                   VerticalOptions="Center">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior 
+                        TintColor="{AppThemeBinding 
+                        Light={StaticResource LightTextVariant}, 
+                        Dark={StaticResource DarkTextVariant}}"/>
+                </Image.Behaviors>
+            </Image>
+            <Label Style="{StaticResource Subtitle}" Text=" Masterisé pour Apple"/>
+        </HorizontalStackLayout>
+
+        <Label Style="{StaticResource Subtitle}" 
+               Text="{Binding Album.ReleaseDate, 
+                    Source={x:Reference View}, 
+                    StringFormat='{0:dd MMMM yyyy}'}"/>
+        <Label Style="{StaticResource Subtitle}">
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0} morceaux, {1} minutes">
+                    <Binding Path="Album.NumberOfTracks" Source="{x:Reference View}"/>
+                    <Binding Path="Album.Duration" Source="{x:Reference View}"/>
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+        <Label Style="{StaticResource Subtitle}" Text="{Binding Album.RecordLabel, Source={x:Reference View}}"/>
+    </VerticalStackLayout>
+</ContentView>
