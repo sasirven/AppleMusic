@@ -38,7 +38,7 @@
                    Text="{Binding Album.Genre, Source={x:Reference View}}"/>
             <Label Style="{StaticResource Subtitle}" 
                    Text="{Binding Album.ReleaseDate, Source={x:Reference View}, StringFormat=' · {0:yyyy} ·'}"/>
-            <Image Source="apple_lossless_icon" Margin="5,0">
+            <Image Source="apple_lossless_icon.png" Margin="5,0">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior 
                         TintColor="{AppThemeBinding Light={StaticResource LightTextVariant}, 
@@ -55,9 +55,11 @@
             </Grid.ColumnDefinitions>
 
             <Button Text="Lecture" Margin="20" 
-                    ImageSource="{AppThemeBinding Light=play_icon_light, Dark=play_icon_dark}"/>
+                    ImageSource="{AppThemeBinding Light=play_icon_light.png, Dark=play_icon_dark.png}"
+                    Clicked="Play_Button_OnClicked"/>
             <Button Grid.Column="1" Text="Aléatoire" Margin="20"
-                    ImageSource="{AppThemeBinding Light=shuffle_icon_light, Dark=shuffle_icon_dark}"/>
+                    ImageSource="{AppThemeBinding Light=shuffle_icon_light.png, Dark=shuffle_icon_dark.png}"
+                    Clicked="Shuffle_Button_OnClicked"/>
         </Grid>
     </VerticalStackLayout>
     

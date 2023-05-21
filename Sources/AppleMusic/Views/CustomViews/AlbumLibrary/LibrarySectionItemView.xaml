@@ -35,7 +35,7 @@
                Text="{Binding Text, Source={x:Reference View}}"/>
 
         <Image Grid.Row="0" Grid.Column="2"
-               Source="chevron_right_icon">
+               Source="chevron_right_icon.png">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource LightSecondary}, Dark={StaticResource DarkSecondary}}"/>
             </Image.Behaviors>

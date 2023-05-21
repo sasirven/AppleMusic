@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="star_icon" 
+            <Image Source="star_icon.png" 
                Opacity="{Binding IsStarred, Converter={StaticResource BoolToOpacityConverter}}"
                VerticalOptions="Center">
                 <Image.Behaviors>
@@ -39,7 +39,7 @@
             </Image>
             <Label Grid.Column="1" Text="{Binding Number}" Margin="10, 0" VerticalOptions="Center" Style="{StaticResource Subtitle}"/>
             <Label Grid.Column="2" Text="{Binding Name}" VerticalOptions="Center" LineBreakMode="TailTruncation" Padding="0,0,40,0"/>
-            <Image Grid.Column="3" Source="download_icon" VerticalOptions="Center">
+            <Image Grid.Column="3" Source="download_icon.png" VerticalOptions="Center">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior 
                     TintColor="{AppThemeBinding 

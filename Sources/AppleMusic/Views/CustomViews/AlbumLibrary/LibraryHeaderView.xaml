@@ -15,10 +15,10 @@
                FontSize="40"
                Margin="10"/>
 
-        <views:LibrarySectionItemView ImageSource="music_note_list_icon" Text="Playlists" />
-        <views:LibrarySectionItemView ImageSource="micro_icon" Text="Artists" />
-        <views:LibrarySectionItemView ImageSource="albums_icon" Text="Albums" />
-        <views:LibrarySectionItemView ImageSource="compilations_icon" Text="Compilations" />
+        <views:LibrarySectionItemView ImageSource="music_note_list_icon.png" Text="Playlists" />
+        <views:LibrarySectionItemView ImageSource="micro_icon.png" Text="Artists" />
+        <views:LibrarySectionItemView ImageSource="albums_icon.png" Text="Albums" />
+        <views:LibrarySectionItemView ImageSource="compilations_icon.png" Text="Compilations" />
 
         <Label Text="Ajouts récents"
                FontSize="25"
