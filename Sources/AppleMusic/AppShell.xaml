@@ -15,17 +15,17 @@
             Title="Écouter"
             ContentTemplate="{DataTemplate pages:LibraryPage}"
             Icon="listen_icon"
-            Route="library" /> 
+            Route="listen" /> 
         <ShellContent
             Title="Explorer"
             ContentTemplate="{DataTemplate pages:LibraryPage}"
             Icon="explore_icon"
-            Route="library" /> 
+            Route="explore" /> 
         <ShellContent
             Title="Radio"
             ContentTemplate="{DataTemplate pages:LibraryPage}"
             Icon="radio_icon"
-            Route="library" /> 
+            Route="radio" /> 
         <ShellContent
             Title="Bibliothèque"
             ContentTemplate="{DataTemplate pages:LibraryPage}"
@@ -35,6 +35,6 @@
             Title="Recherche"
             ContentTemplate="{DataTemplate pages:LibraryPage}"
             Icon="search_icon"
-            Route="library" /> 
+            Route="search" /> 
     </TabBar>
 </Shell>
