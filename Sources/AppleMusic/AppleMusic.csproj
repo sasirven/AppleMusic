@@ -34,109 +34,71 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-		<MauiImage Include="Resources\Images\Icons\apple_lossless_icon.svg">
-		  <BaseSize>20,20</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\download_icon.svg">
-		  <BaseSize>10,10</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\explore_icon.svg">
-		  <BaseSize>32,32</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\library_icon.svg">
-		  <BaseSize>32,32</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\listen_icon.svg">
-		  <BaseSize>32,32</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\mastered_for_apple_icon.svg">
-		  <BaseSize>32,32</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\play_icon_dark.svg">
-		  <BaseSize>20,20</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\play_icon_light.svg">
-		  <BaseSize>20,20</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\radio_icon.svg">
-		  <BaseSize>32,32</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\search_icon.svg">
-		  <BaseSize>32,32</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\shuffle_icon_dark.svg">
-		  <BaseSize>20,20</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\shuffle_icon_light.svg">
-		  <BaseSize>20,20</BaseSize>
-		</MauiImage>
-		<MauiImage Include="Resources\Images\Icons\star_icon.svg">
-		  <BaseSize>10,10</BaseSize>
-		</MauiImage>
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-        <MauiImage Update="Resources\Images\Icons\*" BaseSize="32,32" />
+		<MauiImage Include="Resources\Images\Icons\*" />
+		<MauiImage Update="Resources\Images\Icons\*" BaseSize="32,32" />
 		<MauiImage Update="Resources\Images\Icons\apple_lossless_icon.svg" BaseSize="20,20" />
 		<MauiImage Update="Resources\Images\Icons\play_icon_light.svg" BaseSize="20,20" />
 		<MauiImage Update="Resources\Images\Icons\play_icon_dark.svg" BaseSize="20,20" />
 		<MauiImage Update="Resources\Images\Icons\shuffle_icon_light.svg" BaseSize="20,20" />
 		<MauiImage Update="Resources\Images\Icons\shuffle_icon_dark.svg" BaseSize="20,20" />
-		<MauiImage Update="Resources\Images\Icons\star_icon.svg" BaseSize="10,10" />
+		<MauiImage Update="Resources\Images\Icons\mastered_for_apple_icon.svg" BaseSize="15,15" />
 		<MauiImage Update="Resources\Images\Icons\download_icon.svg" BaseSize="15,15" />
-
+		<MauiImage Update="Resources\Images\Icons\star_icon.svg" BaseSize="10,10" />
+		
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-
 	</ItemGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\Pages\MainPage.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\DetailPage.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\CustomViews\ImageTitleView.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\AppShell.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Pages\MainPage.xaml.cs">
-	    <DependentUpon>MainPage.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="Pages\DetailPage.xaml.cs">
-	    <DependentUpon>DetailPage.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="Views\CustomViews\ImageTitleView.xaml.cs">
-	    <DependentUpon>ImageTitleView.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="Views\Pages\AppShell.xaml.cs">
-	    <DependentUpon>AppShell.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	</ItemGroup>
-
+	
 	<ItemGroup>
 	  <ProjectReference Include="..\Model\Model.csproj" />
 	  <ProjectReference Include="..\StubLib\StubLib.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <MauiXaml Update="Views\CustomViews\Album\AlbumFooterView.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CustomViews\Album\AlbumHeaderView.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CustomViews\Album\MusicCellView.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CustomViews\Album\MusicListView.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="Views\CustomViews\Album\AlbumFooterView.xaml.cs">
+	    <DependentUpon>AlbumFooterView.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Views\CustomViews\Album\AlbumHeaderView.xaml.cs">
+	    <DependentUpon>AlbumHeaderView.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Views\CustomViews\Album\MusicCellView.xaml.cs">
+	    <DependentUpon>MusicCellView.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Views\CustomViews\Album\MusicListView.xaml.cs">
+	    <DependentUpon>MusicListView.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 </Project>
